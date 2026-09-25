@@ -92,7 +92,7 @@ const VERB_DATABASE = [
   { korean: "쉬다", conjugation: "쉬어요", past: "쉬었어요", chinese: "休息", example: "집에서 좀 쉬어요. (在休息一下。)", lesson: "L4 日常生活 II" },
   { korean: "일어나다", conjugation: "일어나요", past: "일어났어요", chinese: "起床", example: "여섯 시쯤 일어나요. (六點左右起床。)", lesson: "L4 日常生活 II" },
   { korean: "끝나다", conjugation: "끝나요", past: "끝났어요", chinese: "結束", example: "수업이 끝나요. (課結束了。)", lesson: "L4 日常生活 II" },
-  { korean: "쓰다", topics: [T.음식], conjugation: "써요", past: "썼어요", chinese: "寫/使用/(味道)苦", example: "편지를 써요. (寫信。)", lesson: "L4 日常生活 II" },
+  { korean: "쓰다", topics: [T.음식, T.학교], conjugation: "써요", past: "썼어요", chinese: "寫/使用/(味道)苦", example: "편지를 써요. (寫信。)", lesson: "L4 日常生活 II" },
   { korean: "일하다", topics: [T.직업], conjugation: "일해요", past: "일했어요", chinese: "工作", example: "회사에서 일해요. (在公司工作。)", lesson: "L4 日常生活 II" },
   { korean: "알다", conjugation: "알아요", past: "알았어요", chinese: "知道/認識", example: "하나 극장을 알아요? (你知道哈那電影院嗎？)", lesson: "L5 位置" },
   { korean: "건너가다", conjugation: "건너가요", past: "건너갔어요", chinese: "渡過/過(馬路)", example: "앞에서 길을 건너가세요. (請在前面過馬路。)", lesson: "L5 位置" },
@@ -151,6 +151,8 @@ const VERB_DATABASE = [
   { korean: "싸다", type: "adj", conjugation: "싸요", past: "쌌어요", chinese: "便宜的", example: "이 가게는 사과가 싸요. (這家店的蘋果很便宜。)", lesson: T.값, topics: [T.쇼핑] },
   { korean: "비싸다", type: "adj", conjugation: "비싸요", past: "비쌌어요", chinese: "昂貴的", example: "이 모자는 너무 비싸요. (這頂帽子太貴了。)", lesson: T.값, topics: [T.쇼핑] },
   { korean: "깎다", conjugation: "깎아요", past: "깎았어요", chinese: "殺價/打折", example: "좀 깎아 주세요. (請算便宜一點。)", lesson: T.값, topics: [T.쇼핑] },
+  { korean: "동전", type: "noun", chinese: "硬幣/零錢", example: "동전이 없어요. (沒有零錢。)", lesson: T.값 },
+  { korean: "남다", conjugation: "남아요", past: "남았어요", chinese: "剩下/殘留", example: "동전이 조금 남았어요. (還剩一點零錢。)", lesson: T.값 },
 
   // 主題：계절 季節
   { korean: "계절", type: "noun", chinese: "季節", example: "어느 계절을 좋아해요? (你喜歡哪個季節？)", lesson: T.계절 },
@@ -183,6 +185,10 @@ const VERB_DATABASE = [
   { korean: "기차", type: "noun", chinese: "火車", example: "기차로 부산에 가요. (搭火車去釜山。)", lesson: T.교통 },
   { korean: "비행기", type: "noun", chinese: "飛機", example: "비행기를 타고 일본에 가요. (搭飛機去日本。)", lesson: T.교통 },
   { korean: "내리다", conjugation: "내려요", past: "내렸어요", chinese: "下(車)", example: "다음 역에서 내리세요. (請在下一站下車。)", lesson: T.교통 },
+  { korean: "공항버스", type: "noun", chinese: "機場巴士 (공항 機場 + 버스 巴士)", example: "공항버스를 타고 공항에 가요. (搭機場巴士去機場。)", lesson: T.교통, topics: [T.여행] },
+  { korean: "매표소", type: "noun", chinese: "售票處", example: "매표소에서 표를 사요. (在售票處買票。)", lesson: T.교통, topics: [T.여행] },
+  { korean: "표", type: "noun", chinese: "票/車票", example: "부산 가는 표 한 장 주세요. (請給我一張去釜山的票。)", lesson: T.교통, topics: [T.여행, T.영화] },
+  { korean: "편하다", type: "adj", conjugation: "편해요", past: "편했어요", chinese: "方便/舒適", example: "지하철이 편해요. (搭地鐵很方便。)", lesson: T.교통 },
 
   // 主題：나라 國家
   { korean: "나라", type: "noun", chinese: "國家", example: "어느 나라 사람이에요? (你是哪國人？)", lesson: T.나라 },
@@ -292,7 +298,7 @@ const VERB_DATABASE = [
   { korean: "여권", type: "noun", chinese: "護照", example: "여권을 꼭 가져가세요. (請一定要帶護照。)", lesson: T.여행 },
   { korean: "출발하다", conjugation: "출발해요", past: "출발했어요", chinese: "出發", example: "아홉 시에 출발해요. (九點出發。)", lesson: T.여행 },
   { korean: "도착하다", conjugation: "도착해요", past: "도착했어요", chinese: "抵達", example: "서울에 도착했어요. (抵達首爾了。)", lesson: T.여행 },
-  { korean: "다녀오다", conjugation: "다녀와요", past: "다녀왔어요", chinese: "去一趟回來", example: "제주도에 다녀왔어요. (去了一趟濟州島回來。)", lesson: T.여행 },
+  { korean: "다녀오다", topics: [T.교통], conjugation: "다녀와요", past: "다녀왔어요", chinese: "去一趟回來", example: "제주도에 다녀왔어요. (去了一趟濟州島回來。)", lesson: T.여행 },
 
   // 主題：영화 電影
   { korean: "영화", type: "noun", chinese: "電影", example: "같이 영화를 봐요. (一起看電影吧。)", lesson: T.영화, topics: [T.취미] },
@@ -363,6 +369,7 @@ const VERB_DATABASE = [
   { korean: "배드민턴", type: "noun", chinese: "羽毛球", example: "공원에서 배드민턴을 쳐요. (在公園打羽毛球。)", lesson: T.취미 },
   { korean: "자주", type: "adv", chinese: "經常", example: "주말에 자주 등산해요. (週末經常爬山。)", lesson: T.취미 },
   { korean: "주로", type: "adv", chinese: "主要/通常", example: "주말에 주로 집에서 쉬어요. (週末通常在家休息。)", lesson: T.취미 },
+  { korean: "보통", type: "adv", chinese: "通常/一般", example: "보통 주말에 등산해요. (通常週末去爬山。)", lesson: T.취미 },
 
   // 主題：학교 學校
   { korean: "학교", type: "noun", chinese: "學校", example: "학교에 가요. (去學校。)", lesson: T.학교 },
@@ -372,6 +379,13 @@ const VERB_DATABASE = [
   { korean: "숙제", type: "noun", chinese: "作業", example: "숙제를 해요. (寫作業。)", lesson: T.학교 },
   { korean: "학생", type: "noun", chinese: "學生", example: "저는 학생이에요. (我是學生。)", lesson: T.학교 },
   { korean: "방학", type: "noun", chinese: "放假", example: "방학에 여행을 가요. (放假時去旅行。)", lesson: T.학교 },
+  { korean: "볼펜", type: "noun", chinese: "原子筆", example: "볼펜으로 이름을 쓰세요. (請用原子筆寫名字。)", lesson: T.학교 },
+  { korean: "지우개", type: "noun", chinese: "橡皮擦", example: "지우개 좀 빌려 주세요. (請借我橡皮擦。)", lesson: T.학교 },
+  { korean: "지우다", conjugation: "지워요", past: "지웠어요", chinese: "擦掉/消除", example: "틀린 글자를 지워요. (把寫錯的字擦掉。)", lesson: T.학교 },
+  { korean: "사용하다", conjugation: "사용해요", past: "사용했어요", chinese: "使用", example: "시험을 볼 때 볼펜을 사용하세요. (考試時請使用原子筆。)", lesson: T.학교 },
+  { korean: "시험을 보다", conjugation: "시험을 봐요", past: "시험을 봤어요", chinese: "參加考試", example: "내일 한국어 시험을 봐요. (明天考韓文。)", lesson: T.학교 },
+  { korean: "잘못", type: "adv", chinese: "錯誤地/失誤", example: "이름을 잘못 썼어요. (名字寫錯了。)", lesson: T.학교 },
+  { korean: "쉽다", type: "adj", conjugation: "쉬워요", past: "쉬웠어요", chinese: "容易/簡單 (副詞形：쉽게 輕鬆地)", example: "시험이 쉬웠어요. (考試很簡單。)", lesson: T.학교 },
 
   // 補充單字 (不在主題表內)
   { korean: "말하다", conjugation: "말해요", past: "말했어요", chinese: "說話", example: "천천히 말해 주세요. (請慢慢說。)", lesson: "補充單字" },
