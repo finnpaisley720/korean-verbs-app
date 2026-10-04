@@ -73,7 +73,8 @@ const T = {
   취미: "主題：취미 興趣",
   학교: "主題：학교 學校",
   考古題: "考古題 Day 38–45",
-  考古題2: "考古題 第二批"
+  考古題2: "考古題 第二批",
+  考古題3: "考古題 Day 47–50"
 };
 
 // 精準提取自 Paisley 筆記的韓文單字資料 (type: 預設為動詞；adj 形容詞；noun 名詞無動詞變化)
@@ -110,7 +111,7 @@ const VERB_DATABASE = [
   { korean: "놀다", conjugation: "놀아요", past: "놀았어요", chinese: "玩/玩樂", example: "친구 집에 가서 놀아요. (去朋友家玩。)", lesson: "L8-L9 季節天氣 & 週末活動" },
   { korean: "타다", topics: [T.교통], conjugation: "타요", past: "탔어요", chinese: "搭乘/騎", example: "지하철을 타고 가세요. (請搭地鐵去。)", lesson: "L10-L11 交通 & 電話" },
   { korean: "갈아타다", topics: [T.교통], conjugation: "갈아타요", past: "갈아탔어요", chinese: "轉乘/換乘", example: "버스로 갈아타세요. (請轉乘公車。)", lesson: "L10-L11 交通 & 電話" },
-  { korean: "걸리다", conjugation: "걸려요", past: "걸렸어요", chinese: "花費(時間)", example: "30분 정도 걸려요. (大概花費30分鐘。)", lesson: "L10-L11 交通 & 電話" },
+  { korean: "걸리다", topics: [T.考古題3], conjugation: "걸려요", past: "걸렸어요", chinese: "花費(時間)", example: "30분 정도 걸려요. (大概花費30分鐘。)", lesson: "L10-L11 交通 & 電話" },
   { korean: "걸어오다", conjugation: "걸어와요", past: "걸어왔어요", chinese: "走路過來", example: "가까워서 걸어와요. (很近所以走過來。)", lesson: "L10-L11 交通 & 電話" },
   { korean: "전화하다", conjugation: "전화해요", past: "전화했어요", chinese: "打電話", example: "제가 나중에 다시 전화할게요. (我等一下再打電話。)", lesson: "L10-L11 交通 & 電話" },
   { korean: "보내다", conjugation: "보내요", past: "보냈어요", chinese: "寄/傳送", example: "이메일을 보내요. (寄電子郵件。)", lesson: "L10-L11 交通 & 電話" },
@@ -129,7 +130,7 @@ const VERB_DATABASE = [
   // 主題：가구 家具
   { korean: "가구", type: "noun", chinese: "家具", example: "새 가구를 샀어요. (買了新家具。)", lesson: T.가구 },
   { korean: "책상", type: "noun", chinese: "書桌", example: "책상 위에 책이 있어요. (書桌上有書。)", lesson: T.가구 },
-  { korean: "의자", type: "noun", chinese: "椅子", example: "의자에 앉으세요. (請坐在椅子上。)", lesson: T.가구 },
+  { korean: "의자", topics: [T.考古題3], type: "noun", chinese: "椅子", example: "의자에 앉으세요. (請坐在椅子上。)", lesson: T.가구 },
   { korean: "침대", type: "noun", chinese: "床", example: "침대에서 자요. (在床上睡覺。)", lesson: T.가구 },
   { korean: "옷장", type: "noun", chinese: "衣櫃", example: "옷장에 옷이 많아요. (衣櫃裡衣服很多。)", lesson: T.가구 },
   { korean: "책장", type: "noun", chinese: "書櫃", example: "책장에 책을 넣어요. (把書放進書櫃。)", lesson: T.가구 },
@@ -226,7 +227,7 @@ const VERB_DATABASE = [
   // 主題：날씨 天氣
   { korean: "날씨", type: "noun", chinese: "天氣", example: "오늘 날씨가 어때요? (今天天氣怎麼樣？)", lesson: T.날씨 },
   { korean: "덥다", type: "adj", conjugation: "더워요", past: "더웠어요", chinese: "熱", example: "여름은 너무 더워요. (夏天太熱了。)", lesson: T.날씨 },
-  { korean: "춥다", type: "adj", conjugation: "추워요", past: "추웠어요", chinese: "冷", example: "겨울은 추워요. (冬天很冷。)", lesson: T.날씨 },
+  { korean: "춥다", topics: [T.考古題3], type: "adj", conjugation: "추워요", past: "추웠어요", chinese: "冷 (ㅂ不規則：추운 겨울)", example: "겨울은 추워요. (冬天很冷。)", lesson: T.날씨 },
   { korean: "따뜻하다", topics: [T.考古題], type: "adj", conjugation: "따뜻해요", past: "따뜻했어요", chinese: "溫暖", example: "봄 날씨가 따뜻해요. (春天天氣很溫暖。)", lesson: T.날씨 },
   { korean: "시원하다", type: "adj", conjugation: "시원해요", past: "시원했어요", chinese: "涼爽", example: "가을은 시원해요. (秋天很涼爽。)", lesson: T.날씨 },
   { korean: "맑다", type: "adj", conjugation: "맑아요", past: "맑았어요", chinese: "晴朗", example: "오늘은 날씨가 맑아요. (今天天氣晴朗。)", lesson: T.날씨 },
@@ -268,7 +269,7 @@ const VERB_DATABASE = [
   { korean: "가슴", type: "noun", chinese: "胸", example: "가슴이 아파요. (胸口痛。)", lesson: T.몸 },
   { korean: "허리", type: "noun", chinese: "腰", example: "허리가 아파요. (腰痛。)", lesson: T.몸 },
   { korean: "팔", type: "noun", chinese: "手臂", example: "팔이 길어요. (手臂很長。)", lesson: T.몸 },
-  { korean: "다리", type: "noun", chinese: "腿", example: "많이 걸어서 다리가 아파요. (走太多路腿很痠。)", lesson: T.몸 },
+  { korean: "다리", topics: [T.考古題3], type: "noun", chinese: "腿", example: "많이 걸어서 다리가 아파요. (走太多路腿很痠。)", lesson: T.몸 },
 
   // 主題：사진 照片
   { korean: "사진", type: "noun", chinese: "照片", example: "사진을 찍어요. (拍照片。)", lesson: T.사진 },
@@ -354,7 +355,7 @@ const VERB_DATABASE = [
   { korean: "방", type: "noun", chinese: "房間", example: "제 방은 작아요. (我的房間很小。)", lesson: T.집 },
   { korean: "화장실", type: "noun", chinese: "廁所", example: "화장실이 어디예요? (廁所在哪裡？)", lesson: T.집 },
   { korean: "부엌", type: "noun", chinese: "廚房", example: "어머니가 부엌에서 요리하세요. (媽媽在廚房做菜。)", lesson: T.집 },
-  { korean: "넓다", type: "adj", conjugation: "넓어요", past: "넓었어요", chinese: "寬敞", example: "거실이 넓어요. (客廳很寬敞。)", lesson: T.집 },
+  { korean: "넓다", topics: [T.考古題3], type: "adj", conjugation: "넓어요", past: "넓었어요", chinese: "寬敞", example: "거실이 넓어요. (客廳很寬敞。)", lesson: T.집 },
   { korean: "좁다", type: "adj", conjugation: "좁아요", past: "좁았어요", chinese: "狹窄", example: "방이 좀 좁아요. (房間有點窄。)", lesson: T.집 },
 
   // 主題：취미 興趣
@@ -430,7 +431,7 @@ const VERB_DATABASE = [
   { korean: "다치다", conjugation: "다쳐요", past: "다쳤어요", chinese: "受傷", example: "교통사고로 다리를 다쳤어요. (因為車禍腿受傷了。)", lesson: T.考古題, topics: [T.몸] },
   { korean: "생기다", conjugation: "생겨요", past: "생겼어요", chinese: "產生/出現", example: "집 앞에 카페가 생겼어요. (家門口開了一家咖啡廳。)", lesson: T.考古題 },
   { korean: "조심하다", conjugation: "조심해요", past: "조심했어요", chinese: "小心/注意", example: "계단에서 조심하세요. (在樓梯上請小心。)", lesson: T.考古題 },
-  { korean: "올라가다", conjugation: "올라가요", past: "올라갔어요", chinese: "上去/爬上去", example: "산에 올라가요. (爬上山。)", lesson: T.考古題 },
+  { korean: "올라가다", topics: [T.考古題3], conjugation: "올라가요", past: "올라갔어요", chinese: "上去/爬上去", example: "산에 올라가요. (爬上山。)", lesson: T.考古題 },
   { korean: "벌다", conjugation: "벌어요", past: "벌었어요", chinese: "賺錢 (ㄹ脫落：過去冠形詞變 번 돈)", example: "아르바이트로 돈을 벌어요. (靠打工賺錢。)", lesson: T.考古題, topics: [T.직업] },
   { korean: "안내 받다", conjugation: "안내 받아요", past: "안내 받았어요", chinese: "獲得指引/接受導覽", example: "매표소에서 안내 받았어요. (在售票處得到了指引。)", lesson: T.考古題, topics: [T.여행] },
   { korean: "느리다", type: "adj", conjugation: "느려요", past: "느렸어요", chinese: "緩慢的", example: "버스가 너무 느려요. (公車太慢了。)", lesson: T.考古題, topics: [T.교통] },
@@ -490,6 +491,71 @@ const VERB_DATABASE = [
   { korean: "미리", type: "adv", chinese: "事先/預先", example: "표를 미리 사세요. (請事先買票。)", lesson: T.考古題2, topics: [T.여행] },
   { korean: "그렇게 하면", type: "adv", chinese: "要是那麼做的話/那樣的話", example: "그렇게 하면 시간이 줄어요. (那樣做的話可以節省時間。)", lesson: T.考古題2 },
 
+  // 考古題 Day 47–50
+  { korean: "걷기", type: "noun", chinese: "健走/散步運動", example: "매일 아침 걷기를 해요. (每天早上健走。)", lesson: T.考古題3, topics: [T.취미] },
+  { korean: "온몸", type: "noun", chinese: "全身/整個身體", example: "운동을 해서 온몸이 아파요. (運動後全身痠痛。)", lesson: T.考古題3, topics: [T.몸] },
+  { korean: "공부방", type: "noun", chinese: "自習室/讀書室/課後學習班", example: "동네 공부방에서 아이들을 가르쳐요. (在社區學習班教小孩。)", lesson: T.考古題3, topics: [T.학교] },
+  { korean: "노인", type: "noun", chinese: "老人/長者", example: "공원에 노인들이 많아요. (公園裡有很多老人。)", lesson: T.考古題3 },
+  { korean: "졸업식", type: "noun", chinese: "畢業典禮", example: "내일은 언니 졸업식이에요. (明天是姐姐的畢業典禮。)", lesson: T.考古題3, topics: [T.학교] },
+  { korean: "동네", type: "noun", chinese: "社區/鄰里/附近一帶", example: "우리 동네는 조용해요. (我們社區很安靜。)", lesson: T.考古題3, topics: [T.집] },
+  { korean: "토끼", type: "noun", chinese: "兔子", example: "토끼가 아주 귀여워요. (兔子非常可愛。)", lesson: T.考古題3 },
+  { korean: "산새", type: "noun", chinese: "山鳥", example: "산에서 산새 소리가 들려요. (在山上聽到山鳥的聲音。)", lesson: T.考古題3 },
+  { korean: "드라마", type: "noun", chinese: "電視劇 (外來語 Drama)", example: "한국 드라마를 자주 봐요. (常看韓劇。)", lesson: T.考古題3, topics: [T.취미, T.영화] },
+  { korean: "뉴스", type: "noun", chinese: "新聞 (外來語 News)", example: "아침에 뉴스를 봐요. (早上看新聞。)", lesson: T.考古題3 },
+  { korean: "아내", type: "noun", chinese: "妻子/太太", example: "제 아내는 선생님이에요. (我太太是老師。)", lesson: T.考古題3, topics: [T.가족] },
+  { korean: "소리", type: "noun", chinese: "聲音", example: "밖에서 이상한 소리가 나요. (外面有奇怪的聲音。)", lesson: T.考古題3 },
+  { korean: "관광기차", type: "noun", chinese: "觀光火車/列車", example: "관광기차를 타고 바다를 구경해요. (搭觀光列車欣賞大海。)", lesson: T.考古題3, topics: [T.교통, T.여행] },
+  { korean: "방향", type: "noun", chinese: "方向", example: "이 방향으로 가세요. (請往這個方向走。)", lesson: T.考古題3, topics: [T.교통] },
+  { korean: "창문", type: "noun", chinese: "窗戶", example: "창문을 열어 주세요. (請打開窗戶。)", lesson: T.考古題3, topics: [T.집] },
+  { korean: "박물관", type: "noun", chinese: "博物館 (역사박물관 歷史博物館)", example: "주말에 역사박물관에 갔어요. (週末去了歷史博物館。)", lesson: T.考古題3, topics: [T.여행] },
+  { korean: "태국", type: "noun", chinese: "泰國", example: "태국 음식은 좀 매워요. (泰國菜有點辣。)", lesson: T.考古題3, topics: [T.나라] },
+  { korean: "태국어", type: "noun", chinese: "泰語", example: "친구에게 태국어를 배워요. (跟朋友學泰語。)", lesson: T.考古題3, topics: [T.나라] },
+  { korean: "설명", type: "noun", chinese: "說明/解說", example: "선생님의 설명이 쉬워요. (老師的說明很好懂。)", lesson: T.考古題3, topics: [T.학교] },
+  { korean: "성격", type: "noun", chinese: "性格/個性", example: "동생은 성격이 밝아요. (弟弟/妹妹個性很開朗。)", lesson: T.考古題3 },
+  { korean: "연극", type: "noun", chinese: "話劇/戲劇", example: "대학로에서 연극을 봤어요. (在大學路看了話劇。)", lesson: T.考古題3, topics: [T.영화, T.취미] },
+  { korean: "동아리", type: "noun", chinese: "社團", example: "사진 동아리에 들어갔어요. (加入了攝影社。)", lesson: T.考古題3, topics: [T.학교, T.취미] },
+  { korean: "말", type: "noun", chinese: "話/言語", example: "선생님 말을 잘 들어요. (好好聽老師的話。)", lesson: T.考古題3 },
+  { korean: "숫자", type: "noun", chinese: "數字", example: "한국어 숫자는 좀 어려워요. (韓文數字有點難。)", lesson: T.考古題3 },
+  { korean: "의미", type: "noun", chinese: "意義/含義/寓意", example: "이 이름은 좋은 의미가 있어요. (這個名字有很好的含義。)", lesson: T.考古題3 },
+  { korean: "결정", type: "noun", chinese: "決定", example: "어려운 결정이었어요. (那是個困難的決定。)", lesson: T.考古題3 },
+  { korean: "모습", type: "noun", chinese: "模樣/樣子", example: "웃는 모습이 예뻐요. (笑的樣子很漂亮。)", lesson: T.考古題3 },
+  { korean: "기쁨", type: "noun", chinese: "喜悅/高興", example: "친구들과 기쁨을 나눠요. (和朋友分享喜悅。)", lesson: T.考古題3, topics: [T.기분] },
+  { korean: "움직이다", conjugation: "움직여요", past: "움직였어요", chinese: "動/活動/移動", example: "아침에 몸을 많이 움직여요. (早上多活動身體。)", lesson: T.考古題3, topics: [T.몸] },
+  { korean: "드리다", conjugation: "드려요", past: "드렸어요", chinese: "奉上/致贈 (주다 的謙讓詞)", example: "할머니께 선물을 드렸어요. (送禮物給奶奶。)", lesson: T.考古題3, topics: [T.생일] },
+  { korean: "놓다", conjugation: "놓아요", past: "놓았어요", chinese: "放置/放下 (놓고 오다 放下後離開)", example: "가방을 집에 놓고 왔어요. (把包包放在家裡就出門了。)", lesson: T.考古題3 },
+  { korean: "설명하다", conjugation: "설명해요", past: "설명했어요", chinese: "說明 (설명해 주다 幫忙解說)", example: "선생님이 문법을 설명해 주셨어요. (老師幫我們解說了文法。)", lesson: T.考古題3, topics: [T.학교] },
+  { korean: "신청하다", conjugation: "신청해요", past: "신청했어요", chinese: "申請", example: "한국어 수업을 신청했어요. (申請了韓文課。)", lesson: T.考古題3, topics: [T.학교] },
+  { korean: "바뀌다", conjugation: "바뀌어요", past: "바뀌었어요", chinese: "被改變/轉變 (被動動詞)", example: "약속 시간이 바뀌었어요. (約定時間改了。)", lesson: T.考古題3 },
+  { korean: "시끄럽다", type: "adj", conjugation: "시끄러워요", past: "시끄러웠어요", chinese: "吵鬧/喧嘩 (ㅂ不規則：시끄러운 사람)", example: "교실이 너무 시끄러워요. (教室太吵了。)", lesson: T.考古題3 },
+  { korean: "부끄러워하다", conjugation: "부끄러워해요", past: "부끄러워했어요", chinese: "感到害羞/表現出不好意思 (心理動詞)", example: "동생은 사람들 앞에서 부끄러워해요. (弟弟在人前會害羞。)", lesson: T.考古題3, topics: [T.기분] },
+  { korean: "바라다", conjugation: "바라요", past: "바랐어요", chinese: "期盼/希望 (尊稱過去式：바라셨습니다)", example: "부모님은 제가 행복하기를 바라셨습니다. (父母希望我幸福。)", lesson: T.考古題3 },
+  { korean: "짓다", conjugation: "지어요", past: "지었어요", chinese: "取(名字)/建造/做(飯) (ㅅ不規則：지어 주다)", example: "할아버지께서 제 이름을 지어 주셨어요. (爺爺幫我取了名字。)", lesson: T.考古題3 },
+  { korean: "선택하다", conjugation: "선택해요", past: "선택했어요", chinese: "選擇", example: "두 개 중에서 하나를 선택하세요. (請從兩個中選一個。)", lesson: T.考古題3 },
+  { korean: "결정하다", conjugation: "결정해요", past: "결정했어요", chinese: "決定/做決定", example: "한국에 유학 가기로 결정했어요. (決定去韓國留學。)", lesson: T.考古題3 },
+  { korean: "따라 하다", conjugation: "따라 해요", past: "따라 했어요", chinese: "跟著做/仿效", example: "선생님 발음을 따라 하세요. (請跟著老師的發音唸。)", lesson: T.考古題3, topics: [T.학교] },
+  { korean: "초대하다", conjugation: "초대해요", past: "초대했어요", chinese: "邀請", example: "친구를 생일 파티에 초대했어요. (邀請朋友來生日派對。)", lesson: T.考古題3, topics: [T.생일] },
+  { korean: "보여 주다", conjugation: "보여 줘요", past: "보여 줬어요", chinese: "展現給…看/出示", example: "사진을 보여 주세요. (請給我看照片。)", lesson: T.考古題3 },
+  { korean: "나누다", conjugation: "나눠요", past: "나눴어요", chinese: "分享/分擔 (기쁨을 나누다 分享喜悅)", example: "케이크를 친구들과 나눠 먹었어요. (和朋友分著吃蛋糕。)", lesson: T.考古題3 },
+  { korean: "어리다", type: "adj", conjugation: "어려요", past: "어렸어요", chinese: "年幼的/年紀小的 (어렸을 때 小時候)", example: "어렸을 때 시골에 살았어요. (小時候住在鄉下。)", lesson: T.考古題3, topics: [T.나이] },
+  { korean: "외롭다", type: "adj", conjugation: "외로워요", past: "외로웠어요", chinese: "孤單的/寂寞的 (ㅂ不規則)", example: "혼자 살아서 가끔 외로워요. (一個人住偶爾會寂寞。)", lesson: T.考古題3, topics: [T.기분] },
+  { korean: "가깝다", type: "adj", conjugation: "가까워요", past: "가까웠어요", chinese: "近的/親近的 (ㅂ不規則：가까운 친구)", example: "집이 학교에서 가까워요. (家離學校很近。)", lesson: T.考古題3 },
+  { korean: "적다", type: "adj", conjugation: "적어요", past: "적었어요", chinese: "少的 (規則變化：적은 돈)", example: "이번 달은 용돈이 적어요. (這個月零用錢很少。)", lesson: T.考古題3, topics: [T.값] },
+  { korean: "온", type: "gram", chinese: "全/整個 (冠形詞，如 온 몸 全身)", example: "온 가족이 함께 여행을 갔어요. (全家人一起去旅行。)", lesson: T.考古題3 },
+  { korean: "천천히", type: "adv", chinese: "慢慢地", example: "천천히 말해 주세요. (請慢慢說。)", lesson: T.考古題3 },
+  { korean: "빨리", type: "adv", chinese: "快快地", example: "빨리 오세요! (快來！)", lesson: T.考古題3 },
+  { korean: "조금씩", type: "adv", chinese: "一點一點地/逐漸", example: "한국어 실력이 조금씩 늘어요. (韓文實力一點一點進步。)", lesson: T.考古題3 },
+  { korean: "별로", type: "adv", chinese: "不太…/幾乎不… (+否定，如 별로 없다)", example: "오늘은 별로 안 추워요. (今天不太冷。)", lesson: T.考古題3 },
+  { korean: "하나도", type: "adv", chinese: "連一個也(不/沒有) (+否定，如 하나도 없다)", example: "돈이 하나도 없어요. (一毛錢也沒有。)", lesson: T.考古題3 },
+  { korean: "조용히", type: "adv", chinese: "安靜地", example: "도서관에서는 조용히 하세요. (在圖書館請安靜。)", lesson: T.考古題3 },
+  { korean: "며칠", type: "noun", chinese: "幾天 (注意拼法，非 몇일)", example: "며칠 동안 여행해요? (要旅行幾天？)", lesson: T.考古題3, topics: [T.날짜] },
+  { korean: "쯤", type: "gram", chinese: "大約/左右 (接在數量詞後，如 한 시간쯤)", example: "한 시간쯤 걸려요. (大約花一個小時。)", lesson: T.考古題3 },
+  { korean: "잠시 후에", type: "adv", chinese: "過了一會兒/片刻之後", example: "잠시 후에 기차가 출발합니다. (火車即將出發。)", lesson: T.考古題3, topics: [T.교통] },
+  { korean: "일찍", type: "adv", chinese: "早/提早", example: "내일은 일찍 일어나요. (明天要早起。)", lesson: T.考古題3 },
+  { korean: "께서 / 께", type: "gram", chinese: "長輩專用主格助詞 / 長輩專用給予助詞 (相當於 에게)", example: "할머니께서 할아버지께 편지를 쓰셨어요. (奶奶寫信給爺爺。)", lesson: T.考古題3, topics: [T.가족] },
+  { korean: "덕분에", type: "gram", chinese: "名詞 + 덕분에：多虧了…/託…的福", example: "선생님 덕분에 시험을 잘 봤어요. (多虧老師，考試考得很好。)", lesson: T.考古題3 },
+  { korean: "처럼", type: "gram", chinese: "名詞 + 처럼：像…一樣", example: "언니처럼 요리를 잘하고 싶어요. (想像姐姐一樣會做菜。)", lesson: T.考古題3 },
+  { korean: "-지 않아도 되다", type: "gram", chinese: "不做…也可以/不一定要…", example: "내일은 일찍 오지 않아도 돼요. (明天不用早來也可以。)", lesson: T.考古題3 },
+
   // 補充單字 (不在主題表內)
   { korean: "말하다", conjugation: "말해요", past: "말했어요", chinese: "說話", example: "천천히 말해 주세요. (請慢慢說。)", lesson: "補充單字" },
   { korean: "대답하다", conjugation: "대답해요", past: "대답했어요", chinese: "回答", example: "선생님 질문에 대답해요. (回答老師的問題。)", lesson: "補充單字" },
@@ -500,11 +566,11 @@ const VERB_DATABASE = [
   { korean: "친구", type: "noun", chinese: "朋友", example: "친구를 만나요. (和朋友見面。)", lesson: "補充單字" },
   { korean: "이름", type: "noun", chinese: "名字", example: "이름이 뭐예요? (你叫什麼名字？)", lesson: "補充單字" },
   { korean: "장소", type: "noun", chinese: "場所", example: "약속 장소가 어디예요? (約定的地點在哪？)", lesson: "補充單字" },
-  { korean: "동물", type: "noun", chinese: "動物", example: "동물을 좋아해요. (喜歡動物。)", lesson: "補充單字" },
+  { korean: "동물", topics: [T.考古題3], type: "noun", chinese: "動物", example: "동물을 좋아해요. (喜歡動物。)", lesson: "補充單字" },
   { korean: "색깔", type: "noun", chinese: "顏色", example: "무슨 색깔을 좋아해요? (喜歡什麼顏色？)", lesson: "補充單字" }
 ];
 
-const TYPE_LABELS = { verb: "動詞原型", adj: "形容詞原型", noun: "名詞", q: "疑問詞", adv: "副詞" };
+const TYPE_LABELS = { verb: "動詞原型", adj: "形容詞原型", noun: "名詞", q: "疑問詞", adv: "副詞", gram: "文法/助詞" };
 
 const CATEGORIES = ["全部單字", ...Array.from(new Set([...VERB_DATABASE.map(v => v.lesson), ...Object.values(T)]))];
 
