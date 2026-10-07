@@ -630,7 +630,7 @@ export default function App() {
   }, [userStatus]);
   const [shuffledDeck, setShuffledDeck] = useState(VERB_DATABASE);
   const [isShuffled, setIsShuffled] = useState(false);
-  const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'hideLearned' | 'review' | 'new'
+  const [statusFilter, setStatusFilter] = useState('learnedLast'); // 'all' | 'learnedLast' | 'hideLearned' | 'review' | 'new'
   const [deckVersion, setDeckVersion] = useState(0); // 雲端進度載入後重建一次牌組
 
   // 防呆對話框狀態
@@ -722,7 +722,7 @@ export default function App() {
     });
   }, [selectedCategory, searchQuery]);
 
-  // 依學習狀態篩選 (全部 / 隱藏已熟記 / 只看待複習 / 只看未學過)
+  // 依學習狀態篩選 (全部 / 已熟記排最後 / 隱藏已熟記 / 只看待複習 / 只看未學過)
   const matchStatus = (verb, statuses) => {
     const s = statuses[verb.korean];
     if (statusFilter === 'hideLearned') return s !== 'learned';
@@ -736,10 +736,13 @@ export default function App() {
     setCurrentIndex(0);
     setIsFlipped(false);
     const deck = filteredVerbs.filter(v => matchStatus(v, userStatusRef.current));
-    if (isShuffled) {
-      setShuffledDeck([...deck].sort(() => Math.random() - 0.5));
+    const arrange = (cards) => isShuffled ? [...cards].sort(() => Math.random() - 0.5) : cards;
+    if (statusFilter === 'learnedLast') {
+      // 已熟記的字移到牌組最後，其餘照原本順序 (或隨機)
+      const isLearned = (v) => userStatusRef.current[v.korean] === 'learned';
+      setShuffledDeck([...arrange(deck.filter(v => !isLearned(v))), ...arrange(deck.filter(isLearned))]);
     } else {
-      setShuffledDeck(deck);
+      setShuffledDeck(arrange(deck));
     }
   }, [selectedCategory, searchQuery, isShuffled, filteredVerbs, statusFilter, deckVersion]);
 
@@ -1064,6 +1067,7 @@ export default function App() {
                   className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-orange-400 font-medium text-slate-700"
                 >
                   <option value="all">全部單字</option>
+                  <option value="learnedLast">已熟記排最後</option>
                   <option value="hideLearned">隱藏已熟記</option>
                   <option value="review">只看待複習</option>
                   <option value="new">只看未學過</option>
